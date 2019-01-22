@@ -7,8 +7,8 @@
 ## Installation
 + Run the following commands:
 
-    * `git clone https://github.com/noodlebreak/nodejsexp.git`
-    * `cd nodejsexp`
+    * `git clone https://github.com/noodlebreak/expressfriends.git`
+    * `cd expressfriends`
     * `npm install`
 
 + Setup database:
@@ -24,6 +24,7 @@
     `npx nodemon`
 
 You can then browse the APIs by going to [http://localhost:8000/api](http://localhost:8000/api)
+You can change the port by changing the `PORT` variable in `.env`
 
 
 ## Testing
