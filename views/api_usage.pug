@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  h1 API Usage
+  h3 Following APIs are available:
+
+  ul
+    li User API: 
+      ul
+        li
+          Example: a(href='/api/users/') /api/users/
+        li Allowed Methods: POST, GET
+
+    li User detail:
+      ul
+        li
+          Example: a(href='/api/users/1') /api/users/1
+        li Allowed Methods: GET, PATCH
+
+    li User's Friends:
+      ul
+        li
+          Example: a(href='/api/users/3/friends') /api/users/3/friends
+        li Allowed Methods: GET, POST,
+
+    li User's Friends of Friends:
+      ul
+        li
+          Example: a(href='/api/users/3/friends-of-friends') /api/users/3/friends-of-friends
+        li Allowed Methods: GET

@@ -1,0 +1,8 @@
+{
+  "development": {
+    "use_env_variable": "PG_DATABASE_URI"
+  },
+  "test": {
+    "use_env_variable": "PG_DATABASE_URI"
+  }
+}

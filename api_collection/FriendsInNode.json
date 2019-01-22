@@ -1,0 +1,373 @@
+{
+  "front-version": "2.19.1",
+  "version": 3,
+  "nodes": [
+    {
+      "type": "Project",
+      "id": "cab8bc00-6f2c-495f-a1bf-dde7a2336e62",
+      "lastModified": "2019-01-23T02:38:24.261+05:30",
+      "name": "FriendsAppNodeJS"
+    },
+    {
+      "type": "Scenario",
+      "id": "760a53bb-77a5-410d-b397-f75e18046584",
+      "lastModified": "2019-01-23T02:03:04.535+05:30",
+      "name": "Scenario 1",
+      "requestOrder": [
+        "Add User",
+        "Get Users",
+        "Get User Detail",
+        "Update User",
+        "Delete User",
+        "Get User's Friends",
+        "Get User's Friend's Detail",
+        "Add Friend",
+        "Delete Friend"
+      ],
+      "parentId": "cab8bc00-6f2c-495f-a1bf-dde7a2336e62"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n  \"firstName\": \"Charlie\",\n  \"lastName\": \"XCX\"\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:3000",
+        "path": "/api/users/"
+      },
+      "id": "902e9d55-8d46-4ec2-9e95-b6ddb238dd64",
+      "lastModified": "2019-01-22T23:26:24.291+05:30",
+      "name": "Add User",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {},
+      "parentId": "760a53bb-77a5-410d-b397-f75e18046584"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:3000",
+        "path": "/api/users/"
+      },
+      "id": "fa1cc1f1-8222-4199-b25a-186cb86403a4",
+      "lastModified": "2019-01-22T23:14:57.408+05:30",
+      "name": "Get Users",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "760a53bb-77a5-410d-b397-f75e18046584"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:3000",
+        "path": "/api/users/3/"
+      },
+      "id": "1467ce44-5b89-4d4e-841a-3b26537366a8",
+      "lastModified": "2019-01-22T23:26:02.434+05:30",
+      "name": "Get User Detail",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "760a53bb-77a5-410d-b397-f75e18046584"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc5789",
+        "name": "PATCH"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n  \"lastName\": \"Bing\"\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:3000",
+        "path": "/api/users/53"
+      },
+      "id": "81d9131c-e02f-4a85-9fcd-86602a9d6dcc",
+      "lastModified": "2019-01-22T23:44:22.202+05:30",
+      "name": "Update User",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {},
+      "parentId": "760a53bb-77a5-410d-b397-f75e18046584"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.5",
+        "name": "DELETE"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n  \"lastName\": \"Bing\"\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:3000",
+        "path": "/api/users/58"
+      },
+      "id": "d6734377-651a-4c41-af38-c2f329e46c37",
+      "lastModified": "2019-01-22T23:55:39.955+05:30",
+      "name": "Delete User",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "760a53bb-77a5-410d-b397-f75e18046584"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n  \"lastName\": \"Bing\"\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:3000",
+        "path": "/api/users/5/friends/"
+      },
+      "id": "433961c3-e58c-4adc-9513-0bbd2d9b34e8",
+      "lastModified": "2019-01-22T23:58:25.137+05:30",
+      "name": "Get User's Friends",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "760a53bb-77a5-410d-b397-f75e18046584"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n  \"lastName\": \"Bing\"\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:3000",
+        "path": "/api/users/5/friends/3"
+      },
+      "id": "dddcd436-13e6-483a-b3ae-7c78523f2222",
+      "lastModified": "2019-01-23T00:04:56.681+05:30",
+      "name": "Get User's Friend's Detail",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "760a53bb-77a5-410d-b397-f75e18046584"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n  \"id\": 5\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:3000",
+        "path": "/api/users/13/friends/add"
+      },
+      "id": "3145eb2b-c685-4810-882e-c9cd3d7cac32",
+      "lastModified": "2019-01-23T02:02:53.519+05:30",
+      "name": "Add Friend",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {},
+      "parentId": "760a53bb-77a5-410d-b397-f75e18046584"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.5",
+        "name": "DELETE"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n  \"lastName\": \"Bing\"\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:3000",
+        "path": "/api/users/5/friends/13"
+      },
+      "id": "40d10acf-4cf6-45f1-a2c6-9beb2bb46659",
+      "lastModified": "2019-01-23T02:38:24.261+05:30",
+      "name": "Delete Friend",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "760a53bb-77a5-410d-b397-f75e18046584"
+    }
+  ]
+}
