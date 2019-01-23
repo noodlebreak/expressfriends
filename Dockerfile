@@ -13,4 +13,6 @@ COPY . /opt/apps/expressfriends
 ENV PORT 80
 EXPOSE 80
 
+CMD npx sequelize db:migrate
+CMD npx sequelize db:seed:all
 CMD npm start
