@@ -119,26 +119,6 @@ function addFriend(req, res, next){
         .catch(failure(req, next));
 }
 
-// /**
-//  * Get a single friend for a user
-//  */
-// function getFriendDetail(req, res, next){
-//     return models.Friendship.findAll(
-//         {
-//             where: {UserId: req.params.userId, FriendId: req.params.friendId}
-//         })
-//         .then( () => {
-//             models.User.findByPk(req.params.friendId)
-//                 .then(user => {
-//                     if (!user)
-//                         notFound('User');
-//                     success(res)(user);
-//                 })
-//                 .catch(failure(req, next, 404));
-//         })
-//         .catch(failure(req, next, 404));
-// }
-
 /**
  * Delete friendship relation for a user.
  */
