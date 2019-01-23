@@ -33,9 +33,9 @@ function seedFriendships(models) {
     { UserId: 12, FriendId: 3, createdAt: new Date(), updatedAt: new Date() }
   ];
 
-  return data.map(friendship_seed => {
-    models.Friendship.create(friendship_seed).catch(e => console.log(e));
-  });
+  return models.Friendship.bulkCreate(data)
+        .catch(e => console.log(e));
+
 }
 
 module.exports = seedFriendships;

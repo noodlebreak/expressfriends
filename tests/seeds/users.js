@@ -17,10 +17,8 @@ function seedUsers(models) {
     {firstName: 'Angad', lastName: 'Chotalla', createdAt: new Date(), updatedAt: new Date()}
   ];
 
-  return data.map( (user_seed) => {
-    models.User.create(user_seed)
+  return models.User.bulkCreate(data)
     .catch(e => console.log(e))
-  })
 }
 
 module.exports = seedUsers;
