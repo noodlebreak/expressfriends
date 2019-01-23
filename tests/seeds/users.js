@@ -22,3 +22,5 @@ function seedUsers(models) {
     .catch(e => console.log(e))
   })
 }
+
+module.exports = seedUsers;

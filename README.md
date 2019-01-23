@@ -37,7 +37,8 @@ You can change the port by changing the `PORT` variable in `.env`
 * **Test cases**
 
     There are test cases written for checking the functioning of all the APIs.
-    You can run the tests by running the following command:
+    Make sure to create a local DB with the same name as the development one, but with `_test` suffix.
+    You can then run the tests by running the following command:
 
     `npm run test`
 

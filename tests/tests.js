@@ -10,37 +10,29 @@ let app = require("../app/app.js"),
 
 chai.use(chaiHttp);
 
-console.log("seedUsers is: " + seedUsers);
-console.log("seedFriendships is: " + seedFriendships);
-
 describe("Testing server", () => {
+
+    // start with a fresh DB
+    beforeEach(done => {
+      models.sequelize
+          .sync({ force: true, match: /_test$/, logging: false })
+          .then(() => {
+              return () => {
+                  seedUsers(models);
+                  seedFriendships(models);
+              }
+          })
+          .then(() => {
+              done();
+          });
+    });
+
   it("should run", done => {
     expect(app).to.exist;
     done();
   });
 
   describe("User API Routes", () => {
-    // start with a fresh DB
-    beforeEach(done => {
-      console.log(
-        "\n\n",
-        `NODE_ENV=${process.env.NODE_ENV}`,
-        `DB_NAME=${process.env.DB_NAME}`,
-        `DB_URL=${process.env.DATABASE_URL}`,
-        "\n\n"
-      );
-      models.sequelize
-        .sync({ force: true, match: /_test$/, logging: false })
-        .then(() => {
-          return seedUsers(models).then(() => {
-            seedFriendships(models);
-          });
-        })
-        .then(() => {
-          done();
-        });
-    });
-
     it("should fetch all users (list)", done => {
       chai
         .request(app)

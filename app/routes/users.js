@@ -43,7 +43,6 @@ function getUserDetail(req, res, next) {
  */
 function addUser(req, res, next) {
   let user = req.body;
-  console.log("Received data: " + user);
   if (!user) throw "No user!";
   models.User.create(user)
     .then(data => {

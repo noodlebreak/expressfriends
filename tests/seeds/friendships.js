@@ -37,3 +37,5 @@ function seedFriendships(models) {
     models.Friendship.create(friendship_seed).catch(e => console.log(e));
   });
 }
+
+module.exports = seedFriendships;

@@ -18,7 +18,6 @@ function reqDir(dir) {
 
 function success(res, message) {
   return function(data) {
-    console.log("SUCCESS!");
     let response = {};
     if (message)
       response = {
