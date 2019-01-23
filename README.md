@@ -55,4 +55,15 @@ To check pagination:
 
 ## Demo
 
-A demo is already deployed at [expressfriends.herokuapp.com](https://expressfriends.herokuapp.com/), so check it out.
+* **Heroku**:
+
+    A demo is already deployed at [expressfriends.herokuapp.com](https://expressfriends.herokuapp.com/), so check it out.
+
+* **Docker**:
+
+    If interested in docker image then
+
+    * run `docker build . -t expressfriends`
+    * run `docker run -p 8000:80 expressfriends`
+
+    NOTE: You'll need to connect to local db if on Windows/Mac.
