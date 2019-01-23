@@ -22,7 +22,7 @@
 + You can run the server in two modes:
     1. Auto-reload mode: In case you need to make changes and see them without manually restarting the server:
 
-        `npx nodemon bin/www`
+        `npm run dev`
 
     2. Start the node server without auto reload:
 

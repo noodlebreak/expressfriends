@@ -7,7 +7,7 @@ let notFoundError = require("../../helpers").notFoundError;
 /**
  * Add a friend to a user.
  */
-function makeFriend(userId, friendId) {
+function addNewFriend(userId, friendId) {
   return this.findByPk(userId).then(user => {
     if (!user) {
       notFoundError("User");
@@ -50,7 +50,7 @@ function friendsOfFriends() {
 
 function addMethods(schema) {
   schema.prototype.friendsOfFriends = friendsOfFriends;
-  schema.makeFriend = makeFriend;
+  schema.addNewFriend = addNewFriend;
 }
 
 module.exports = addMethods;

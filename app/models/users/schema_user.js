@@ -1,5 +1,5 @@
 let userModel = require("./model_user");
-let userServiceMethods = require("./_user_service_methods");
+let userServiceMethods = require("../services");
 
 module.exports = (sequelize, DataTypes) => {
   let User = sequelize.define("User", userModel);
