@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "npx nodemon app/server.js",
     "start": "node app/server.js",
-    "test": "NODE_ENV=test mocha tests/tests.js",
+    "test": "mocha tests/tests.js",
     "heroku-postbuild": "npm install"
   },
   "dependencies": {

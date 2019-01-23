@@ -4,28 +4,11 @@ let app = require("../app/app.js"),
   chai = require("chai"),
   expect = chai.expect,
   chaiHttp = require("chai-http"),
-  models = require("../app/models"),
-  seedUsers = require("./seeds/users"),
-  seedFriendships = require("./seeds/friendships");
+  models = require("../app/models");
 
 chai.use(chaiHttp);
 
 describe("Testing server", () => {
-
-    // start with a fresh DB
-    beforeEach(done => {
-      models.sequelize
-          .sync({ force: true, match: /_test$/, logging: false })
-          .then(() => {
-              return () => {
-                  seedUsers(models);
-                  seedFriendships(models);
-              }
-          })
-          .then(() => {
-              done();
-          });
-    });
 
   it("should run", done => {
     expect(app).to.exist;
