@@ -11,9 +11,9 @@ module.exports = {
   },
 
   test: {
-    database: "expressfriendstest",
-    username: process.env.POSTGRES_USERNAME,
-    password: process.env.POSTGRES_PASSWORD,
+    database: process.env.DB_NAME+"_test",
+    username: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
     host: process.env.POSTGRES_HOST,
     dialect: "postgres"
   },
