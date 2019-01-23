@@ -14,6 +14,6 @@ let Sequelize = require('sequelize');
 
 // });
 
-const sequelize = new Sequelize(process.env.PG_DATABASE_URI);
+const sequelize = new Sequelize(process.env.DATABASE_URL);
 
 module.exports = sequelize;
