@@ -32,6 +32,7 @@ module.exports = (sequelize, DataTypes) => {
 			if (!user) notFoundError("User");
 			this.findByPk(friendId).then(friend => {
 				if (!friend) notFoundError("User");
+				// TODO why
 				user.addFriends(friend);
 				friend.addFriends(user);
 			});
