@@ -39,3 +39,7 @@ You can run the tests by running the following command:
 `npm run test`
 
 Make sure the seeds are installed, so that assertions on initial data doesn't fail.
+
+## Demo
+
+A demo is already deployed at [expressfriends.herokuapp.coms](https://expressfriends.herokuapp.com/), so check it out.
