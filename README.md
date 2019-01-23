@@ -46,7 +46,7 @@ You can change the port by changing the `PORT` variable in `.env`
 
 * **Restlet API collection**
 
-    You can use the collection available under the `api_collection` dir, and import it to your installation of Restlet (either on system or in Google Chrome). You can then test the API suite.
+    You can use the collection available under the `api_collection` dir, and import it to your installation of [Restlet](https://chrome.google.com/webstore/detail/restlet-client-rest-api-t/aejoelaoggembcahagimdiliamlcdmfm?hl=en). You can then test the API suite.
 
 ## API usage:
 Just go over to the root of the project site when server is started, and you'll be shown links.
