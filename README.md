@@ -33,12 +33,19 @@ You can change the port by changing the `PORT` variable in `.env`
 
 
 ## Testing
-There are test cases written for checking the functioning of all the APIs.
-You can run the tests by running the following command:
 
-`npm run test`
+* **Test cases**
 
-Make sure the seeds are installed, so that assertions on initial data doesn't fail.
+    There are test cases written for checking the functioning of all the APIs.
+    You can run the tests by running the following command:
+
+    `npm run test`
+
+    Make sure the seeds are installed, so that assertions on initial data doesn't fail.
+
+* **Restlet API collection**
+
+    You can use the collection available under the `api_collection` dir, and import it to your installation of Restlet (either on system or in Google Chrome). You can then test the API suite.
 
 ## API usage:
 Just go over to the root of the project site when server is started, and you'll be shown links.
@@ -48,4 +55,4 @@ To check pagination:
 
 ## Demo
 
-A demo is already deployed at [expressfriends.herokuapp.coms](https://expressfriends.herokuapp.com/), so check it out.
+A demo is already deployed at [expressfriends.herokuapp.com](https://expressfriends.herokuapp.com/), so check it out.
