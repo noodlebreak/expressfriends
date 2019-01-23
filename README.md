@@ -19,9 +19,14 @@
     * Run `npx sequelize db:seed:all` to install sample fixture data, so that the table is somewhat populated for you to see some results in the APIs.
 
 
-+ Start dev server by running the following command in project dir:
++ You can run the server in two modes:
+    1. Auto-reload mode: In case you need to make changes and see them without manually restarting the server:
 
-    `npx nodemon`
+        `npx nodemon bin/www`
+
+    2. Start the node server without auto reload:
+
+        `npm start`
 
 You can then browse the APIs by going to [http://localhost:8000/api](http://localhost:8000/api)
 You can change the port by changing the `PORT` variable in `.env`
