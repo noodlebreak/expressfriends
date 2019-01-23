@@ -83,3 +83,5 @@ typings/
 *.sql
 
 TODO.md
+
+.idea/

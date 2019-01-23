@@ -40,6 +40,12 @@ You can run the tests by running the following command:
 
 Make sure the seeds are installed, so that assertions on initial data doesn't fail.
 
+## API usage:
+Just go over to the root of the project site when server is started, and you'll be shown links.
+To check pagination:
+    + `count`: Use this `GET` param to limit results
+    + `page`: Use this `GET` param to browse the paginated set of results
+
 ## Demo
 
 A demo is already deployed at [expressfriends.herokuapp.coms](https://expressfriends.herokuapp.com/), so check it out.
