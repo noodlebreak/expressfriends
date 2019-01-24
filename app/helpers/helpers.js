@@ -1,4 +1,5 @@
 let fs = require("fs");
+let pgtools = require("pgtools");
 
 // requires all files/modules in a directory
 function reqDir(dir) {
@@ -59,10 +60,39 @@ function getPaginationOption(req) {
   };
 }
 
+function createDatabase(db_name, callback) {
+  return pgtools.createdb(
+    {
+      user: process.env.DB_USERNAME,
+      password: process.env.DB_PASSWORD,
+      port: process.env.DB_PORT,
+      host: process.env.DB_HOST
+    },
+    db_name,
+    function(err, res) {
+      let can_call = false;
+      if (err) {
+        if (err.message.includes("Attempted to create a duplicate database.")) {
+          console.error("Skipping DB creation: already exists");
+          can_call = true;
+        }
+      }
+      else {
+        can_call = true;
+        console.log("createDatabase result: " + res);
+      }
+      if (can_call){
+        callback();
+      }
+    }
+  );
+}
+
 module.exports = {
-  failure: failure,
-  success: success,
-  require: reqDir,
-  notFoundError: notFoundError,
-  getPaginationOption: getPaginationOption
+  failure,
+  success,
+  notFoundError,
+  getPaginationOption,
+  createDatabase,
+  require: reqDir
 };

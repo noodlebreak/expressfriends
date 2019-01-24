@@ -5,24 +5,28 @@ let app = require("../app/app.js"),
   expect = chai.expect,
   chaiHttp = require("chai-http"),
   models = require("../app/models"),
-  seed = require("./seed");
-
+  sequelize_config = require("../app/config/config"),
+  seed = require("./seed"),
+  createDatabase = require("../app/helpers/").createDatabase;
 
 chai.use(chaiHttp);
 
 describe("Testing server", () => {
-
+  before(done => {
     // start with a fresh DB
-    before(done => {
+    let test_db_name = sequelize_config[process.env.NODE_ENV].database;
+    createDatabase(test_db_name, function() {
       models.sequelize
-          .sync({ force: true, match: /_test$/, logging: false })
-          .then(() => {
-            seed(models);
-          })
-          .then(() => {
-            done();
-          });
+        // run migrations and initialize with seed data
+        .sync({ force: true, match: /_test$/, logging: false })
+        .then(() => {
+          seed(models);
+        })
+        .then(() => {
+          done();
+        });
     });
+  });
 
   it("should run", done => {
     expect(app).to.exist;
@@ -54,14 +58,14 @@ describe("Testing server", () => {
       chai
         .request(app)
         .post("/api/users")
-        .send({firstName: 'Don', lastName: 'Draper'})
+        .send({ firstName: "Don", lastName: "Draper" })
         .end((err, res) => {
           expect(err).to.be.null;
           expect(res).to.have.status(201);
           let checkObj = {
             id: 16,
-            firstName: 'Don',
-            lastName: 'Draper'
+            firstName: "Don",
+            lastName: "Draper"
           };
           expect(res.body).to.include(checkObj);
           done();
@@ -74,8 +78,8 @@ describe("Testing server", () => {
         .end((err, res) => {
           let checkObj = {
             id: 16,
-            firstName: 'Don',
-            lastName: 'Draper'
+            firstName: "Don",
+            lastName: "Draper"
           };
           expect(err).to.be.null;
           expect(res).to.have.status(200);
@@ -87,14 +91,14 @@ describe("Testing server", () => {
       chai
         .request(app)
         .patch("/api/users/16")
-        .send({firstName: 'Betty'}) // We'll change the firstName of the User
+        .send({ firstName: "Betty" }) // We'll change the firstName of the User
         .end((err, res) => {
           expect(err).to.be.null;
           expect(res).to.have.status(202);
           let checkObj = {
             id: 16,
-            firstName: 'Betty',
-            lastName: 'Draper'
+            firstName: "Betty",
+            lastName: "Draper"
           };
           expect(res.body).to.include(checkObj);
           done();
@@ -114,10 +118,10 @@ describe("Testing server", () => {
       chai
         .request(app)
         .post("/api/users/1/friends")
-        .send({id: 16})
+        .send({ id: 16 })
         .end((err, res) => {
           expect(err).to.be.null;
-          expect(res.body).to.eql('');
+          expect(res.body).to.eql("");
           expect(res).to.have.status(200);
           done();
         });
