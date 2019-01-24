@@ -35,7 +35,10 @@ You can change the port by changing the `PORT` variable in `.env`
 * **Test cases**
 
     There are test cases written for checking the functioning of all the APIs.
-    **Make sure to create a local DB with the same name as the development one, but with `_test` suffix.** Test cases will use that DB.
+
+    **Test DB creation**:
+
+    A test database is automatically created, with the same name as that provided in the `.env` file's `DB_NAME` paramter, but with a `_test` prefix. BUT it is only created if the DB user you've provided in the .env file has a role with permissions to create DB. Otherwise: **make sure to create a local DB with the same name as the development one, and set its credentials in `app/config/config.js`**
 
     You can then run the tests by running the following command:
 
