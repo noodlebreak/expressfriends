@@ -15,9 +15,7 @@
     * `createdb <dbname>`
     * Add above created db's connection params in `.env` file, with proper  
       values for db-host, db-user, and password
-    * Run `npx sequelize db:migrate` to create tables.
-    * Run `npx sequelize db:seed:all` to install sample fixture data, so that the table is somewhat populated for you to see some results in the APIs.
-
+    * Run `npm run initdb` to create tables, and install sample fixture data, so that the table is somewhat populated for you to see some results in the APIs.
 
 + You can run the server in two modes:
     1. Auto-reload mode: In case you need to make changes and see them without manually restarting the server:
@@ -37,7 +35,8 @@ You can change the port by changing the `PORT` variable in `.env`
 * **Test cases**
 
     There are test cases written for checking the functioning of all the APIs.
-    Make sure to create a local DB with the same name as the development one, but with `_test` suffix.
+    **Make sure to create a local DB with the same name as the development one, but with `_test` suffix.** Test cases will use that DB.
+
     You can then run the tests by running the following command:
 
     `npm run test`

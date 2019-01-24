@@ -34,13 +34,6 @@
         "Friendship": {
             "tableName": "Friendship",
             "schema": {
-                "id": {
-                    "allowNull": false,
-                    "primaryKey": true,
-                    "autoIncrement": true,
-                    "field": "id",
-                    "seqType": "Sequelize.INTEGER"
-                },
                 "createdAt": {
                     "allowNull": false,
                     "field": "createdAt",

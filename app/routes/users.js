@@ -150,9 +150,9 @@ user_api_router
   .patch(updateUser)
   .delete(deleteUser);
 
-user_api_router.route("/:userId/friends").get(getFriends);
-
-user_api_router.route("/:userId/friends/add").post(addFriend);
+user_api_router.route("/:userId/friends")
+  .get(getFriends)
+  .post(addFriend);
 
 user_api_router.route("/:userId/friends-of-friends").get(getFriendsOfFriends);
 

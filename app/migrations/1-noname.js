@@ -6,14 +6,14 @@ var Sequelize = require('sequelize');
  * Actions summary:
  *
  * createTable "Users", deps: []
- * createTable "UserFriend", deps: [Users, Users]
+ * createTable "Friendship", deps: [Users, Users]
  *
  **/
 
 var info = {
     "revision": 1,
     "name": "noname",
-    "created": "2019-01-22T16:33:11.391Z",
+    "created": "2019-01-24T08:17:42.939Z",
     "comment": ""
 };
 
@@ -56,13 +56,6 @@ var migrationCommands = [{
         params: [
             "Friendship",
             {
-                "id": {
-                    "type": Sequelize.INTEGER,
-                    "field": "id",
-                    "autoIncrement": true,
-                    "primaryKey": true,
-                    "allowNull": false
-                },
                 "createdAt": {
                     "type": Sequelize.DATE,
                     "field": "createdAt",

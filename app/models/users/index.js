@@ -1,3 +1,1 @@
-user_schema = require("./schema_user.js");
-
-module.exports = user_schema;
+module.exports = require("./schema_user.js");
