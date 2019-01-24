@@ -52,7 +52,7 @@ function getPaginationOption(req) {
   if (page <= 0) page = 1;
 
   // account for offset and count
-  offset = (page - 1) * pageSize;
+  let offset = (page - 1) * pageSize;
 
   return {
     offset: offset,
